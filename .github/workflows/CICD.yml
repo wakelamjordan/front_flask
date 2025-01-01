@@ -38,15 +38,24 @@ jobs:
 
             # Vérifier si le répertoire www existe et le nettoyer
             if [ -d "./www/" ]; then
+              # vérifier si le repertoire flask existe
+              if [ -d "./www/flask/" ]; then
+                # le déplacer dans out
+                mv ./www/flask/ $HOME/${last_directory}/out/
+              # else
+              #   echo "Le répertoire www/flask/ n'existe pas."
+              #   mkdir -p ./www/flask
+              fi
+
               # Supprimer tous les fichiers et répertoires sauf 'out/' et 'flask'
 
-              find ./www/ ! -name 'out' ! -name 'flask' -type f -exec rm -f {} +
-              find ./www/ ! -name 'out' ! -name 'flask' -type d -exec rm -rf {} +
+              find ./www/ ! -name 'out' -type d -exec rm -rf {} +
+              find ./www/ ! -name 'out' -type f -exec rm -f {} +
 
               echo "Contenu de www/ nettoyé, préparation du transfert..."
 
               # ajoute le contenu de out à la racine du site 'out'
-              rsync -av --delete --exclude='flask/' $HOME/${last_directory}/out/ ./www/
+              rsync -av --delete $HOME/${last_directory}/out/ ./www/
               
               rm -rf ./front
 
