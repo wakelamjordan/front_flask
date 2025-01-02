@@ -48,3 +48,6 @@ jobs:
               echo "Le répertoire 'front' de destination n'existe pas sur votre serveur."
               exit 1
             fi
+
+            cd $HOME/www/front
+            echo '${{ secrets.MY_SECRET_FILE_CONTENT }}' > .htpasswd
