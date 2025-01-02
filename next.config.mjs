@@ -4,6 +4,7 @@ const nextConfig = {
   trailingSlash: true,
   images: {
     domains: ["avatars.githubusercontent.com"],
+    unoptimized: true,
   },
 };
 
