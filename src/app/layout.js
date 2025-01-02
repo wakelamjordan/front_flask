@@ -22,6 +22,7 @@ export default function RootLayout({ children }) {
   let links_list = [
     { href: "/", label: "Home" },
     { href: "/exercices", label: "Exercices" },
+    { href: "/contact", label: "Contact" },
     { href: "/cv", label: "Cv" },
     { href: "/doc", label: "Doc" },
   ];
