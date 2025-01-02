@@ -2,7 +2,6 @@ import React from "react";
 
 import Link from "next/link";
 
-
 function NavBar() {
   return (
     <div className="navbar bg-base-100">
@@ -38,6 +37,9 @@ function NavBar() {
               <Link href="/contact">Contact</Link>
             </li>
             <li>
+              <Link href="/cv">Cv</Link>
+            </li>
+            <li>
               <a>Parent</a>
               <ul className="p-2">
                 <li>
@@ -65,6 +67,9 @@ function NavBar() {
           </li>
           <li>
             <Link href="/contact">Contact</Link>
+          </li>
+          <li>
+            <Link href="/cv">Cv</Link>
           </li>
           <li>
             <details>

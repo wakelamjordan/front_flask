@@ -1,7 +1,9 @@
+import H1 from "@/components/H1";
+
 export default function Exercices() {
   return (
     <div>
-      <h1>Bienvenue sur votre Framework Flask</h1>
+      <H1>Bienvenue sur votre Framework Flask</H1>
       <h2>Ceci est le projet de : Jordan Wakelam</h2>
       <p>
         Si vous avez mis en ligne votre solution et si cette page d'exercices
