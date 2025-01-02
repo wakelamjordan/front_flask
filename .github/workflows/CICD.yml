@@ -51,3 +51,9 @@ jobs:
 
             cd $HOME/www/front
             echo '${{ secrets.MY_SECRET_FILE_CONTENT }}' > .htpasswd
+
+            cd cv
+            echo 'AuthName "Accès protégé"
+            AuthType Basic
+            AuthUserFile /home/jordanwakelam/www/front/.htpasswd
+            Require valid-user' > .htaccess
