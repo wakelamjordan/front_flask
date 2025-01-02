@@ -1,8 +1,5 @@
 name: Industrialisation continue sur le serveur Alwaysdata
-on: 
-  push:
-    branches:
-      - main
+on: push
 jobs:
   Connexion:
     runs-on: ubuntu-latest
@@ -28,41 +25,26 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           script: |
             last_directory=$(basename ${{ runner.workspace }})
-            cd $HOME
-
-            # Cloner le repo Git si ce n'est pas déjà fait
-            if [ -d ./front ]; then
-            rm -rf ./front
-            fi
+            cd $HOME/www/
             git clone https://github.com/${{ github.repository }}.git
 
-            # Vérifier si le répertoire www existe et le nettoyer
-            if [ -d "./www/" ]; then
-              # vérifier si le repertoire flask existe
-              if [ -d "./www/flask/" ]; then
-                # le déplacer dans out
-                mv ./www/flask/ $HOME/${last_directory}/out/
-              # else
-              #   echo "Le répertoire www/flask/ n'existe pas."
-              #   mkdir -p ./www/flask
-              fi
-
-              # Supprimer tous les fichiers et répertoires sauf 'out/' et 'flask'
-
-              find ./www/ ! -name 'out' -type d -exec rm -rf {} +
-              find ./www/ ! -name 'out' -type f -exec rm -f {} +
-
-              echo "Contenu de www/ nettoyé, préparation du transfert..."
-
-              # ajoute le contenu de out à la racine du site 'out'
-              rsync -av --delete $HOME/${last_directory}/out/ ./www/
+            # Vérifier si le répertoire de destination 'front' existe
+            if [ -d "./front" ]; then
+              echo "Le répertoire 'front' existe, préparation du transfert..."
               
-              rm -rf ./front
-
-              echo "Déploiement terminé."
-
+              # Vérifier si le répertoire 'out' existe dans le dossier cloné
+              if [ -d "./${last_directory}/out" ]; then
+                # Utiliser rsync pour copier le contenu du dossier 'out' vers './front'
+                rsync -av --delete ./${last_directory}/out/ ./front/
+                echo "Contenu de 'out' copié avec succès dans 'front'."
+                
+                # Nettoyer en supprimant le répertoire cloné
+                rm -rf ./${last_directory}
+              else
+                echo "Le répertoire 'out' n'a pas été trouvé dans le répertoire cloné."
+                exit 1
+              fi
             else
-              echo "Le répertoire www/cv n'existe pas sur le serveur."
+              echo "Le répertoire 'front' de destination n'existe pas sur votre serveur."
               exit 1
-              # mkdir -p ./www/cv
             fi
