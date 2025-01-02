@@ -49,11 +49,11 @@ jobs:
               exit 1
             fi
 
-            cd $HOME/www/front
+            cd $HOME/www/front/cv
             echo '${{ secrets.MY_SECRET_FILE_CONTENT }}' > .htpasswd
 
             cd cv
             echo 'AuthName "Accès protégé"
             AuthType Basic
-            AuthUserFile /home/jordanwakelam/www/front/.htpasswd
+            AuthUserFile /home/jordanwakelam/www/front/cv/.htpasswd
             Require valid-user' > .htaccess
