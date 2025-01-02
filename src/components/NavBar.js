@@ -2,7 +2,12 @@ import React from "react";
 
 import Link from "next/link";
 
-function NavBar() {
+function NavBar({ links_list }) {
+  const links_elements = links_list.map((link, index) => (
+    <li key={index}>
+      <Link href={link.href}>{link.label}</Link>
+    </li>
+  ));
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -27,70 +32,18 @@ function NavBar() {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
-            <li>
-              <Link href="/">Home</Link>
-            </li>
-            <li>
-              <Link href="/exercices">Exercices</Link>
-            </li>
-            <li>
-              <Link href="/contact">Contact</Link>
-            </li>
-            <li>
-              <Link href="/cv">Cv</Link>
-            </li>
-            <li>
-              <a>Parent</a>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a>Item 3</a>
-            </li>
+            {links_elements}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <Link href="/" className="btn btn-ghost text-xl">
+          JWKL
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          <li>
-            <Link href="/">Home</Link>
-          </li>
-          <li>
-            <Link href="/exercices">Exercices</Link>
-          </li>
-          <li>
-            <Link href="/contact">Contact</Link>
-          </li>
-          <li>
-            <Link href="/cv">Cv</Link>
-          </li>
-          <li>
-            <details>
-              <summary>Parent</summary>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </details>
-          </li>
-          <li>
-            <a>Item 3</a>
-          </li>
-        </ul>
+        <ul className="menu menu-horizontal px-1">{links_elements}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        {/* <a className="btn">Button</a> */}
       </div>
     </div>
   );

@@ -1,5 +1,10 @@
 import H1 from "@/components/H1";
 
+export const metadata = {
+  title: "Exercices",
+  description: "page exercices",
+};
+
 export default function Exercices() {
   return (
     <div>

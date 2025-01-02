@@ -1,5 +1,9 @@
 import Image from "next/image";
 // import RootLayout from "../layout";
+export const metadata = {
+  title: "Contact",
+  description: "page contact",
+};
 export default function Contact() {
   return (
     // <RootLayout>
