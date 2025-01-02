@@ -19,12 +19,11 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-
   let links_list = [
-    {href: "/", label: "Home"},
-    {href: "/exercices", label: "Exercices"},
-    {href: "/cv", label: "Cv"},
-    {href: "/doc", label: "Doc"},
+    { href: "/", label: "Home" },
+    { href: "/exercices", label: "Exercices" },
+    { href: "/cv", label: "Cv" },
+    { href: "/doc", label: "Doc" },
   ];
 
   return (
@@ -32,15 +31,16 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <NavBar links_list={links_list}/>
+        <NavBar links_list={links_list} />
         <div className="grid grid-rows-[20px_1fr_20px] min-h-screen sm:px-20 font-[family-name:var(--font-geist-sans)]">
           <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-            {/* <main className=""> */}
-            {children}
+            <div className="w-full max-w-6xl mx-auto py-12 px-6 bg-base-100 shadow-lg rounded-lg space-y-12">
+              {children}
+            </div>
           </main>
         </div>
+        <Footer />
       </body>
-      <Footer />
     </html>
   );
 }
