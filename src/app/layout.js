@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
       >
         <NavBar links_list={links_list} />
         <div className="grid grid-rows-[0px_1fr_0px] min-h-screen font-[family-name:var(--font-geist-sans)] bg-red-600">
-          <main className="bg-white row-start-2 container mx-auto p-4">
+          <main className="bg-white row-start-2 container mx-auto p-4 flex flex-col gap-5">
             {/* <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start"> */}
             {/* <div className="w-full max-w-6xl mx-auto py-12 px-6 bg-base-100 shadow-lg rounded-lg space-y-12"> */}
             {children}
