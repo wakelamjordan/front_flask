@@ -52,8 +52,34 @@ jobs:
             cd $HOME/www/front/cv
             echo '${{ secrets.MY_SECRET_FILE_CONTENT }}' > .htpasswd
 
-            cd cv
+            # Créer .htaccess
             echo 'AuthName "Accès protégé"
             AuthType Basic
             AuthUserFile /home/jordanwakelam/www/front/cv/.htpasswd
             Require valid-user' > .htaccess
+
+      - name: Créer le fichier JSON
+        id: create-json
+        uses: jsdaniell/create-json@v1.2.3
+        with:
+          name: "data_json.json"
+          json: ${{ secrets.DATA_JSON }}
+
+      - name: Supprimer le fichier JSON existant
+        uses: appleboy/ssh-action@master
+        with:
+          host: "ssh-${{ secrets.USERNAME }}.alwaysdata.net"
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          script: |
+            rm -f $HOME/www/front/data/data_json.json
+
+      - name: Transférer le fichier JSON
+        uses: appleboy/scp-action@v0.1.0
+        with:
+          host: "ssh-${{ secrets.USERNAME }}.alwaysdata.net"
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          source: "./data_json.json"
+          target: "$HOME/www/front/data/"
+

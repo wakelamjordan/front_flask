@@ -1,101 +1,85 @@
 {
   "profile": {
-    "name": "Jordan Wakelam",
+    "name": "John Doe",
     "title": "Développeur Web </br> orienté Back-end",
     "photo": {
-      "src": "https://wakelamjordan.github.io/img/original.jpg",
-      "alt": "photo de Jordan Wakelam"
+      "src": "https://example.com/img/photo.jpg",
+      "alt": "photo de John Doe"
     },
-    "birth": "1990-07-28",
+    "birth": "1990-01-01",
     "contact": {
-      "email": "jwakelams@gmail.com",
-      "phone": "+33 6 41 16 23 13",
-      "location": "France, Éssonne",
-      "website": "https://wakelamjordan.github.io/",
-      "linkedin": "https://www.linkedin.com/in/jordan-wakelam-350a24241",
-      "github": "https://github.com/wakelamjordan"
+      "email": "johndoe@example.com",
+      "phone": "+33 6 00 00 00 00",
+      "location": "France, Région Parisienne",
+      "website": "https://johndoe.dev/",
+      "linkedin": "https://www.linkedin.com/in/johndoe",
+      "github": "https://github.com/johndoe"
     }
   },
-  "summary": "Développeur web junior déterminé, avec une spécialisation en Symfony et React. Ancien militaire, je fais preuve de rigueur et d'adaptabilité dans toutes mes missions. Curieux et passionné, je m'efforce de comprendre et d'apprendre en continu pour progresser et atteindre mes objectifs.",
+  "summary": "Développeur web junior déterminé, avec une spécialisation en Symfony et React. Ancien professionnel dans un secteur exigeant, je fais preuve de rigueur et d'adaptabilité dans toutes mes missions. Curieux et passionné, je m'efforce de comprendre et d'apprendre en continu pour progresser et atteindre mes objectifs.",
   "experience": [
     {
       "jobTitle": "Développeur Web",
-      "company": "LivinWeb Intersel",
+      "company": "WebTech Solutions",
       "location": "Paris",
       "startDate": "03/2024",
       "endDate": "05/2024",
       "responsibilities": [
-        "Réalisation d’un portail Web avec conception et templating.",
-        "Conception d’un module de génération IA et SEO avec API REST.",
-        "Adaptation d’un existant en un modèle de ressource pour la réalisation d’un blog.",
-        "Conception et intégration d’un module de détection de langue."
+        "Création d’un portail web avec conception et templating.",
+        "Développement d’un module d’optimisation SEO basé sur une API REST.",
+        "Transformation d’une application existante en un modèle de ressource pour un blog.",
+        "Conception et intégration d’un module de détection automatique de langue."
       ],
-      "projectLink": "https://onehealth.renaultgroup.com/"
+      "projectLink": "https://exemple-projet.com/"
     },
     {
-      "jobTitle": "Chef de groupe appui mouvement",
-      "company": "Ministère des Armées - Armée de terre",
+      "jobTitle": "Responsable d'équipe logistique",
+      "company": "Organisation Nationale",
       "location": "France",
       "startDate": "2012",
       "endDate": "2023",
       "responsibilities": [
-        "Encadrement et gestion d’une équipe pour des missions de soutien.",
-        "Développement des compétences en gestion de groupe et en leadership.",
-        "Adaptation et réactivité face aux défis logistiques et stratégiques."
+        "Supervision et gestion d’une équipe dans des missions de soutien logistique.",
+        "Développement de compétences en leadership et en gestion d'équipe.",
+        "Réactivité et adaptation face aux contraintes opérationnelles et stratégiques."
       ]
-    }
-  ],
-  "education": [
-    {
-      "degree": "Licence professionnelle en informatique - Web, Mobile et Business Intelligence",
-      "school": "Le Cnam Paris",
-      "location": "Paris, France",
-      "graduationDate": "2025",
-      "startDate": "2024"
-    },
-    {
-      "degree": "Titre Professionnel niveau 5 - Développeur Web et Web Mobile",
-      "school": "CMFP",
-      "location": "France",
-      "graduationDate": "2024",
-      "startDate": "2023"
     }
   ],
   "skills": {
     "technicalSkills": [
       {
         "name": "PHP",
-        "image": "https://wakelamjordan.github.io/img/php-svgrepo-com.svg",
+        "image": "https://example.com/img/php-icon.svg",
         "exemple": "Développement de solutions backend robustes avec PHP, gestion des sessions utilisateur, traitement des formulaires et création d'API REST."
       },
       {
         "name": "JavaScript",
-        "image": "https://wakelamjordan.github.io/img/Unofficial_JavaScript_logo_2.svg",
+        "image": "https://example.com/img/javascript-icon.svg",
         "exemple": "Implémentation de fonctionnalités interactives sur des sites web avec JavaScript, manipulation du DOM, intégration d'API et gestion des événements utilisateur."
       },
       {
         "name": "Symfony",
-        "image": "https://wakelamjordan.github.io/img/symfony_black_03.svg",
+        "image": "https://example.com/img/symfony-icon.svg",
         "exemple": "Conception et développement d'applications web structurées avec Symfony, création de routes, gestion des entités avec Doctrine et implémentation de contrôleurs."
       },
       {
         "name": "API Platform",
-        "image": "https://wakelamjordan.github.io/img/Logo_Circle%20webby%20blue.svg",
+        "image": "https://example.com/img/api-platform-icon.svg",
         "exemple": "Création d'API performantes et sécurisées avec API Platform, génération automatique de documentation Swagger et gestion de la validation des données."
       },
       {
         "name": "React",
-        "image": "https://wakelamjordan.github.io/img/React-icon.svg",
+        "image": "https://example.com/img/react-icon.svg",
         "exemple": "Développement d'interfaces utilisateur dynamiques et réactives avec React, gestion de l'état via hooks et intégration d'API pour afficher des données en temps réel."
       },
       {
         "name": "Tailwind CSS",
-        "image": "https://wakelamjordan.github.io/img/Tailwind_CSS_Logo.svg",
+        "image": "https://example.com/img/tailwind-css-icon.svg",
         "exemple": "Création d'interfaces modernes et responsives avec Tailwind CSS, utilisation des classes utilitaires pour un design rapide et flexible, et personnalisation des thèmes."
       },
       {
         "name": "Bootstrap",
-        "image": "https://wakelamjordan.github.io/img/Bootstrap_logo.svg",
+        "image": "https://example.com/img/bootstrap-icon.svg",
         "exemple": "Mise en place de designs web adaptatifs et responsifs avec Bootstrap, utilisation des composants prédéfinis et du système de grille pour des mises en page fluides."
       }
     ],
