@@ -25,6 +25,7 @@ export default function RootLayout({ children }) {
     { href: "/contact", label: "Contact" },
     { href: "/cv", label: "Cv" },
     { href: "/doc", label: "Doc" },
+    { href: "/cv_taff", label: "cv_taff" },
   ];
 
   return (
@@ -33,11 +34,12 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NavBar links_list={links_list} />
-        <div className="grid grid-rows-[20px_1fr_20px] min-h-screen sm:px-20 font-[family-name:var(--font-geist-sans)]">
-          <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-            <div className="w-full max-w-6xl mx-auto py-12 px-6 bg-base-100 shadow-lg rounded-lg space-y-12">
-              {children}
-            </div>
+        <div className="grid grid-rows-[0px_1fr_0px] min-h-screen font-[family-name:var(--font-geist-sans)] bg-red-600">
+          <main className="bg-white row-start-2 container mx-auto p-4">
+            {/* <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start"> */}
+            {/* <div className="w-full max-w-6xl mx-auto py-12 px-6 bg-base-100 shadow-lg rounded-lg space-y-12"> */}
+            {children}
+            {/* </div> */}
           </main>
         </div>
         <Footer />
