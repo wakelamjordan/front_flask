@@ -113,7 +113,7 @@ const DoughnutSkills = ({ data_skills }) => {
 
   return (
     // <div className="h-96s grid grid-rows-2 gap-2s">
-    <div className="grid grid-rows-2 gap-2 md:grid-cols-2 md:grid-rows-1 lg:grid-cols-1 lg:grid-rows-2 min-h-[500px]">
+    <div className="grid grid-rows-2 gap-2 md:grid-cols-2 md:grid-rows-1 lg:grid-cols-1 lg:grid-rows-2 min-h-[500px] md:min-h-[246px] lg:min-h-[370px]">
       <div className="m-0">
         <Doughnut
           ref={ChartRef}

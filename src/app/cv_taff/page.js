@@ -14,8 +14,8 @@ export default function Page() {
   const [error, setError] = useState(null); // Pour capturer les erreurs
 
   useEffect(() => {
-    // fetch("/data/secret_json.json")
-      fetch("/data/data_json.json")
+    fetch("/data/secret_json.json")
+      // fetch("/data/data_json.json")
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -46,10 +46,20 @@ export default function Page() {
   //   if (data.length > 0) {
 
   const listSocial = data.listSocial.map((item, key) => {
+    const classTransition = [
+      "transition",
+      "duration-300",
+      "ease-in-out",
+      "transform",
+      "will-change-transform",
+      "w-full",
+      "hover:scale-125",
+      "text-center",
+    ].join(" ");
     return (
       <li key={key}>
         <a
-          // className={classTransition}
+          className={classTransition}
           // key={key}
           target={item.target ? item.target : "_blank"}
           rel="noopener noreferrer"
@@ -87,7 +97,7 @@ export default function Page() {
         </TextContainer>
 
         {/* phrase philosophique d'accroche */}
-        <TextContainer addClass="md:col-span-2">
+        <TextContainer addClass=" md:col-span-2">
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, nisi
             iure! Suscipit saepe nostrum exercitationem similique dolores quae
@@ -104,7 +114,7 @@ export default function Page() {
         </TextContainer>
 
         {/* points forts */}
-        <TextContainer>
+        <TextContainer addClass=" md:col-span-2 lg:col-span-1">
           <ul className="flex flex-col gap-5">
             <li>
               <H3 className="font-bold">Lorem, ipsum dolor sit</H3>
@@ -138,7 +148,7 @@ export default function Page() {
         </TextContainer>
 
         {/* skills */}
-        <div className="rounded-box text-base-content">
+        <div className="rounded-box text-base-content md:col-span-2 lg:col-span-1">
           <DoughnutSkills data_skills={data.skills.technicalSkills} />
         </div>
       </Section>
@@ -148,7 +158,7 @@ export default function Page() {
         <TextContainer>
           <H2 className="text-lg font-semibold">Titre Section</H2>
         </TextContainer>
-        <TextContainer addClass=" lg:col-span-2">
+        <TextContainer addClass=" md:col-span-2">
           <ul className="flex flex-col gap-5">
             <li>
               <H3 className="font-bold">Lorem, ipsum dolor sit</H3>
