@@ -30,7 +30,7 @@ function GetData() {
     return <div>Loading...</div>;
   }
 
-  return <pre>{JSON.stringify(data, null, 2)}</pre>; // Affiche les données JSON formatées
+  return data; // Affiche les données JSON formatées
 }
 
 export default GetData;
