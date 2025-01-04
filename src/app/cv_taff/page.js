@@ -1,110 +1,165 @@
 "use client";
 import React from "react";
 import DoughnutSkills from "./_DoughnutSkills";
+import Section from "./_Section";
+import TextContainer from "./_TextContainer";
+import Icone from "./_Icone";
+import H2 from "./_H2";
+import H3 from "./_H3";
 
 export default function page() {
   return (
     <>
-      <section className="bg-black min-h-fulls flex p-5 flex-col gap-5">
+      <Section className="bg-base-100 flex py-5 flex-col gap-5 md:grid grid-cols-2 rounded-box shadow-lg border border-base-300">
         {/* liens */}
-        <div className="bg-green-500 p-2">
+        <div className="p-2 md:col-start-2 md:flex flex-col justify-center rounded-box">
           <ul className="flex justify-around">
             <li>
-              <div className="bg-black w-10 h-10"></div>
+              <Icone></Icone>
             </li>
             <li>
-              <div className="bg-black w-10 h-10"></div>
+              <Icone></Icone>
             </li>
             <li>
-              <div className="bg-black w-10 h-10"></div>
+              <Icone></Icone>
             </li>
             <li>
-              <div className="bg-black w-10 h-10"></div>
+              <Icone></Icone>
             </li>
             <li>
-              <div className="bg-black w-10 h-10"></div>
+              <Icone></Icone>
             </li>
           </ul>
         </div>
 
         {/* photo */}
-        <div className="bg-green-500 h-64 w-64 mx-auto"></div>
+        <div className="bg-primary h-64 w-64 mx-auto md:col-start-1 md:row-start-1 rounded-box"></div>
 
-        {/* nom prenom */}
-        <div className="bg-green-500">
-          <h1>Lorem ipsum</h1>
-        </div>
+        {/* nom prénom */}
+        <TextContainer>
+          <h1 className="text-xl font-bold">Lorem ipsum</h1>
+        </TextContainer>
 
         {/* titre du poste visé */}
-        <div className="bg-green-500">
-          <h2>Loremipsum</h2>
-        </div>
+        <textContainer>
+          <H2 className="text-lg font-semibold">Loremipsum</H2>
+        </textContainer>
 
-        {/* phrase phylosophique d'accroche */}
-        <div className="bg-green-500">
+        {/* phrase philosophique d'accroche */}
+        <TextContainer addClass="md:col-span-2">
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, nisi
             iure! Suscipit saepe nostrum exercitationem similique dolores quae
             ducimus debitis, id natus, nihil aperiam fugit qui excepturi, soluta
             obcaecati omnis!
           </p>
-        </div>
-      </section>
+        </TextContainer>
+      </Section>
 
-      <section className="bg-black min-h-fulls flex p-5 flex-col gap-5">
-        <div className="bg-green-500">
-          <h2>titre section</h2>
-        </div>
+      <Section className="bg-base-100 min-h-fulls flex py-5 flex-col gap-5 lg:grid grid-cols-2 rounded-box shadow-lg border border-base-300">
+        {/* titre Section */}
+        <TextContainer addClass=" lg:col-span-2">
+          <H2 className="text-lg font-semibold">Titre Section</H2>
+        </TextContainer>
 
-        {/* points fort */}
-        <div className="bg-green-500">
+        {/* points forts */}
+        <TextContainer>
           <ul className="flex flex-col gap-5">
             <li>
-              <h3>Lorem, ipsum dolor sit</h3>
+              <H3 className="font-bold">Lorem, ipsum dolor sit</H3>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Quisquam, quos.
               </p>
             </li>
             <li>
-              <h3>Lorem, ipsum dolor sit</h3>
+              <H3 className="font-bold">Lorem, ipsum dolor sit</H3>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Quisquam, quos.
               </p>
             </li>
             <li>
-              <h3>Lorem, ipsum dolor sit</h3>
+              <H3 className="font-bold">Lorem, ipsum dolor sit</H3>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Quisquam, quos.
               </p>
             </li>
             <li>
-              <h3>Lorem, ipsum dolor sit</h3>
+              <H3 className="font-bold">Lorem, ipsum dolor sit</H3>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Quisquam, quos.
               </p>
             </li>
           </ul>
-        </div>
+        </TextContainer>
 
-        {/* skills forme de roue hoverable avec description en dessous quand les parties sont hover ou clické en sm */}
-        <div className="bg-green-500 m-5">
+        {/* skills */}
+        <div className="rounded-box text-base-content">
           <DoughnutSkills />
         </div>
-      </section>
-      <section>
-        <div className="bg-green-500">
-          <h2>titre section</h2>
-        </div>
+      </Section>
 
-        {/* experiences */}
-        {/* education */}
-        {/* projets */}
-      </section>
-      <section>{/* passions */}</section>
+      <Section className="bg-base-100 min-h-fulls flex py-5 flex-col gap-5 rounded-box shadow-lg border border-base-300">
+        {/* expériences / éducation / projets */}
+        <TextContainer>
+          <H2 className="text-lg font-semibold">Titre Section</H2>
+        </TextContainer>
+        <TextContainer addClass=" lg:col-span-2">
+          <ul className="flex flex-col gap-5">
+            <li>
+              <H3 className="font-bold">Lorem, ipsum dolor sit</H3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quisquam, quos.
+              </p>
+            </li>
+            <li>
+              <H3 className="font-bold">Lorem, ipsum dolor sit</H3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quisquam, quos.
+              </p>
+            </li>
+            <li>
+              <H3 className="font-bold">Lorem, ipsum dolor sit</H3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quisquam, quos.
+              </p>
+            </li>
+            <li>
+              <H3 className="font-bold">Lorem, ipsum dolor sit</H3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quisquam, quos.
+              </p>
+            </li>
+          </ul>
+        </TextContainer>
+      </Section>
+
+      <Section className="bg-base-100 min-h-fulls flex py-5 flex-col gap-5 rounded-box shadow-lg border border-base-300">
+        {/* passions */}
+        <TextContainer>
+          <H2 className="text-lg font-semibold">Titre Section</H2>
+        </TextContainer>
+        <TextContainer addClass=" lg:col-span-2">
+          <ul className="flex justify-around">
+            <li>
+              <div className="bg-primary w-10 h-10 rounded-full"></div>
+            </li>
+            <li>
+              <div className="bg-primary w-10 h-10 rounded-full"></div>
+            </li>
+            <li>
+              <div className="bg-primary w-10 h-10 rounded-full"></div>
+            </li>
+          </ul>
+        </TextContainer>
+      </Section>
     </>
   );
 }

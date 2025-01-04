@@ -65,29 +65,44 @@ const DoughnutSkills = () => {
     if (element.length !== 0) {
       const index = element[0].index;
       setHoveredElement(index);
+    } else if (hoveredElement !== null) {
+      setHoveredElement(null);
     }
   };
 
   return (
-    <div>
-      <Doughnut
-        ref={ChartRef}
-        className="m-5"
-        data={data}
-        options={{
-          responsive: true,
-          plugins: {
-            legend: { display: false }, // Cache la légende
-          },
-          animation: {
-            duration: 2000, // Durée de l'animation en millisecondes (ici 2 secondes)
-            //   easing: "easeOutQuart", // Style d'animation (tu peux essayer d'autres valeurs comme "linear", "easeInOutQuad", etc.)
-          },
-          maintainAspectRatio: false,
-        }}
-        onMouseMove={handleHover}
-        onMouseLeave={() => setHoveredElement(null)}
-      />
+    // <div className="h-96s grid grid-rows-2 gap-2s">
+    <div className="grid grid-rows-2 gap-2 md:grid-cols-2 md:grid-rows-1 lg:grid-cols-1 lg:grid-rows-2">
+      <div className="m-0">
+        <Doughnut
+          ref={ChartRef}
+          //   className="m-5"
+          data={data}
+          options={{
+            responsive: true,
+            plugins: {
+              legend: { display: false }, // Cache la légende
+            },
+            animation: {
+              duration: 2000, // Durée de l'animation en millisecondes (ici 2 secondes)
+              //   easing: "easeOutQuart", // Style d'animation (tu peux essayer d'autres valeurs comme "linear", "easeInOutQuad", etc.)
+            },
+            maintainAspectRatio: false,
+          }}
+          onMouseMove={handleHover}
+          onMouseLeave={() => setHoveredElement(null)}
+        />
+      </div>
+
+      <div className="bg-black m-5 p-5 rounded-box text-base-content">
+        {hoveredElement !== null ? (
+          <p className="text-white text-center">
+            {data.labels[hoveredElement]}
+          </p>
+        ) : (
+          <p className="text-white text-center">Sélectionnez une compétence</p>
+        )}
+      </div>
     </div>
   );
 };
