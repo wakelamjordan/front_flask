@@ -1,22 +1,55 @@
 import { Chart as ChartJS, ArcElement } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
+import H2 from "./_H2";
 
 import { useRef, useState } from "react";
 
 ChartJS.register(ArcElement);
 
-const DoughnutSkills = () => {
+const DoughnutSkills = ({ data_skills }) => {
+  // console.log(data_skills);
+
+  //   "technicalSkills": [
+  //     {
+  //       "name": "PHP",
+  //       "image": "https://wakelamjordan.github.io/img/php-svgrepo-com.svg",
+  //       "exemple": "Développement de solutions backend robustes avec PHP, gestion des sessions utilisateur, traitement des formulaires et création d'API REST.",
+  // backgroundColor:"#3e98c7",
+  // pourcentage: 25,
+  //     },
+  //   ],
+
   const data = {
-    labels: ["React", "JavaScript", "CSS", "HTML"], // Noms des compétences
+    labels: [], // item.name
     datasets: [
       {
         label: "Compétences",
-        data: [25, 30, 20, 25], // Pourcentages (ou valeurs relatives)
-        backgroundColor: ["#3e98c7", "#f39c12", "#27ae60", "#c0392b"], // Couleurs
+        data: [], // itel.pourcentages (ou valeurs relatives)
+        backgroundColor: [], // item.backgroundColor
         hoverOffset: 10, // Effet de survol
       },
     ],
   };
+
+  for (let i = 0; i < data_skills.length; i++) {
+    data.labels.push(data_skills[i].name);
+    data.datasets[0].data.push(data_skills[i].pourcentage);
+    data.datasets[0].backgroundColor.push(data_skills[i].backgroundColor);
+  }
+
+  // console.log(data);
+
+  // const data = {
+  //   labels: ["React", "JavaScript", "CSS", "HTML"], // Noms des compétences
+  //   datasets: [
+  //     {
+  //       label: "Compétences",
+  //       data: [25, 30, 20, 25], // Pourcentages (ou valeurs relatives)
+  //       backgroundColor: ["#3e98c7", "#f39c12", "#27ae60", "#c0392b"], // Couleurs
+  //       hoverOffset: 10, // Effet de survol
+  //     },
+  //   ],
+  // };
 
   //   let data = {
   //     labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
@@ -65,6 +98,14 @@ const DoughnutSkills = () => {
     if (element.length !== 0) {
       const index = element[0].index;
       setHoveredElement(index);
+
+      // console.log(
+      //   element[0].index,
+      //   hoveredElement,
+      //   element.length !== 0,
+      //   hoveredElement !== null,
+      //   index
+      // );
     } else if (hoveredElement !== null) {
       setHoveredElement(null);
     }
@@ -72,7 +113,7 @@ const DoughnutSkills = () => {
 
   return (
     // <div className="h-96s grid grid-rows-2 gap-2s">
-    <div className="grid grid-rows-2 gap-2 md:grid-cols-2 md:grid-rows-1 lg:grid-cols-1 lg:grid-rows-2">
+    <div className="grid grid-rows-2 gap-2 md:grid-cols-2 md:grid-rows-1 lg:grid-cols-1 lg:grid-rows-2 min-h-[500px]">
       <div className="m-0">
         <Doughnut
           ref={ChartRef}
@@ -96,11 +137,12 @@ const DoughnutSkills = () => {
 
       <div className="bg-black m-5 p-5 rounded-box text-base-content">
         {hoveredElement !== null ? (
-          <p className="text-white text-center">
-            {data.labels[hoveredElement]}
-          </p>
+          <>
+            <H2>{data_skills[hoveredElement].name}</H2>
+            <p className="text-white">{data_skills[hoveredElement].exemple}</p>
+          </>
         ) : (
-          <p className="text-white text-center">Sélectionnez une compétence</p>
+          <p className="text-lg font-semibold">Sélectionnez une compétence</p>
         )}
       </div>
     </div>

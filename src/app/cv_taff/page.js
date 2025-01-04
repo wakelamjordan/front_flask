@@ -65,7 +65,6 @@ export default function Page() {
     );
   });
 
-  console.log(listSocial);
   return (
     <>
       <Section className="bg-base-100 flex py-5 flex-col gap-5 md:grid grid-cols-2 rounded-box shadow-lg border border-base-300">
@@ -140,7 +139,7 @@ export default function Page() {
 
         {/* skills */}
         <div className="rounded-box text-base-content">
-          <DoughnutSkills />
+          <DoughnutSkills data_skills={data.skills.technicalSkills} />
         </div>
       </Section>
 
