@@ -31,6 +31,7 @@ yarn-error.log*
 .pnpm-debug.log*
 
 /public/data/secret_json.json
+/out/data/secret_json.json
 
 # env files (can opt-in for committing if needed)
 .env*

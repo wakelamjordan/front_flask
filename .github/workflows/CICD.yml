@@ -65,6 +65,13 @@ jobs:
           name: "data_json.json"
           json: ${{ secrets.DATA_JSON }}
 
+      - name: Créer le fichier JSON_FR
+        id: create-json-fr
+        uses: jsdaniell/create-json@v1.2.3
+        with:
+          name: "data_json_fr.json"
+          json: ${{ secrets.DATA_JSON_FR }}
+
       - name: Supprimer le fichier JSON existant
         uses: appleboy/ssh-action@master
         with:
@@ -81,5 +88,14 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           source: "./data_json.json"
+          target: "$HOME/www/front/data/"
+
+      - name: Transférer le fichier JSON_FR
+        uses: appleboy/scp-action@v0.1.0
+        with:
+          host: "ssh-${{ secrets.USERNAME }}.alwaysdata.net"
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          source: "./data_json_fr.json"
           target: "$HOME/www/front/data/"
 

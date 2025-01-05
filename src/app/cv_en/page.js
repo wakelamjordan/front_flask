@@ -24,8 +24,8 @@ export default function Page() {
   const [error, setError] = useState(null); // Pour capturer les erreurs
 
   useEffect(() => {
-    // fetch("/data/secret_json.json")
-      fetch("/data/secret_json.json")
+    fetch("/data/data_json.json")
+      // fetch("/data/secret_json.json")
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -38,7 +38,7 @@ export default function Page() {
       .catch((error) => {
         setError(error.message); // Capture l'erreur
       });
-  }, [data]);
+  }, []);
 
   if (error) {
     return <div>Error: {error}</div>;
