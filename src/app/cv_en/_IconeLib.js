@@ -13,6 +13,10 @@ import {
   faCheck,
   faCircleExclamation,
   faAt,
+  faScrewdriverWrench,
+  faPaintBrush,
+  faFilm,
+  faGlobe
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -24,5 +28,11 @@ library.add(
   faEnvelope,
   faCheck,
   faCircleExclamation,
-  faAt
+  faAt,
+  faScrewdriverWrench,
+  faPaintBrush,
+  faFilm,
+  faGlobe
 );
+
+// faScrewdriver

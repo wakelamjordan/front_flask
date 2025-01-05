@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
+import DataContext from "./cv_en/_DataContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,8 +25,8 @@ export default function RootLayout({ children }) {
     { href: "/exercices", label: "Exercices" },
     { href: "/contact", label: "Contact" },
     { href: "/cv", label: "Cv" },
+    { href: "/cv_en", label: "Cv_en" },
     { href: "/doc", label: "Doc" },
-    { href: "/cv_taff", label: "cv_taff" },
   ];
 
   return (
@@ -42,7 +43,7 @@ export default function RootLayout({ children }) {
             {/* </div> */}
           </main>
         </div>
-        <Footer />
+        <Footer links_list={links_list} />
       </body>
     </html>
   );

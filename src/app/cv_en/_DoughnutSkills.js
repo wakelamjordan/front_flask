@@ -1,6 +1,7 @@
 import { Chart as ChartJS, ArcElement } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import H2 from "./_H2";
+import Image from "next/image";
 
 import { useRef, useState } from "react";
 
@@ -113,8 +114,25 @@ const DoughnutSkills = ({ data_skills }) => {
 
   return (
     // <div className="h-96s grid grid-rows-2 gap-2s">
-    <div className="grid grid-rows-2 gap-2 md:grid-cols-2 md:grid-rows-1 lg:grid-cols-1 lg:grid-rows-2 min-h-[500px] md:min-h-[246px] lg:min-h-[370px]">
-      <div className="m-0">
+    <div className="grid grid-rows-2 gap-2 lg:grid-cols-1 lg:grid-rows-2 min-h-[500px] md:min-h-[456px] lg:min-h-[370px]">
+      {/* <H2 addClassName=" absolute left-0 -top-1/2">Compétences techniques</H2> */}
+      <div className="m-0 relative">
+        <div
+          className={`h-12 w-12 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300${
+            hoveredElement !== null
+              ? " opacity-100 scale-100 pointer-events-auto animate-pulse"
+              : " opacity-0 scale-50 pointer-events-none"
+          }`}
+        >
+          {hoveredElement !== null && (
+            <Image
+              src={data_skills[hoveredElement].image}
+              alt={`Picture of ${data_skills[hoveredElement].name}`}
+              width={50}
+              height={50}
+            />
+          )}
+        </div>
         <Doughnut
           ref={ChartRef}
           //   className="m-5"
@@ -135,14 +153,17 @@ const DoughnutSkills = ({ data_skills }) => {
         />
       </div>
 
-      <div className="bg-black m-5 p-5 rounded-box text-base-content">
+      <div className="bg-black m-5 p-5 rounded-box text-base-content overflow-hidden">
         {hoveredElement !== null ? (
           <>
             <H2>{data_skills[hoveredElement].name}</H2>
-            <p className="text-white">{data_skills[hoveredElement].exemple}</p>
+            <p className="text-white">
+              <span>{` ${data_skills[hoveredElement].pourcentage}% of my work. `}</span>
+              {data_skills[hoveredElement].exemple}
+            </p>
           </>
         ) : (
-          <p className="text-lg font-semibold">Sélectionnez une compétence</p>
+          <p className="text-lg font-semibold">Select a skill</p>
         )}
       </div>
     </div>

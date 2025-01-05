@@ -2,14 +2,14 @@ import React from "react";
 
 import Link from "next/link";
 
-function NavBar({ links_list }) {
+function NavBar({ links_list, className }) {
   const links_elements = links_list.map((link, index) => (
     <li key={index}>
       <Link href={link.href}>{link.label}</Link>
     </li>
   ));
   return (
-    <div className="navbar bg-base-100">
+    <div className={"navbar bg-base-100 " + className}>
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -42,9 +42,7 @@ function NavBar({ links_list }) {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links_elements}</ul>
       </div>
-      <div className="navbar-end">
-        {/* <a className="btn">Button</a> */}
-      </div>
+      <div className="navbar-end">{/* <a className="btn">Button</a> */}</div>
     </div>
   );
 }
