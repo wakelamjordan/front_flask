@@ -52,11 +52,6 @@ jobs:
             cd $HOME/www/front/cv
             echo '${{ secrets.MY_SECRET_FILE_CONTENT }}' > .htpasswd
 
-            # Créer .htaccess
-            echo 'AuthName "Accès protégé"
-            AuthType Basic
-            AuthUserFile /home/jordanwakelam/www/front/cv/.htpasswd
-            Require valid-user' > .htaccess
 
       - name: Créer le fichier JSON
         id: create-json
