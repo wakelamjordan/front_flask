@@ -49,8 +49,8 @@ jobs:
               exit 1
             fi
 
-            cd $HOME/www/front/cv
-            echo '${{ secrets.MY_SECRET_FILE_CONTENT }}' > .htpasswd
+            # cd $HOME/www/front/cv
+            # echo '${{ secrets.MY_SECRET_FILE_CONTENT }}' > .htpasswd
 
             # # Créer .htaccess
             # echo 'AuthName "Accès protégé"
