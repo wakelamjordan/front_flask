@@ -27,10 +27,13 @@ export default function RootLayout({ children }) {
     { href: "/cv", label: "Cv" },
     { href: "/cv_en", label: "Cv_en" },
     { href: "/doc", label: "Doc" },
-    { href: "/flask/page1", label: "Page1" },
-    { href: "/flask/page2", label: "Page2" },
-    { href: "/flask/page3", label: "Page3" },
-    { href: "/flask/cv3", label: "Cv3" }
+    {
+      href: "https://jordanwakelam.alwaysdata.net/flask/page1/",
+      label: "Page1",
+    },
+    { href: "/page2", label: "Page2" },
+    { href: "/page3", label: "Page3" },
+    { href: "/cv3", label: "Cv3" },
   ];
 
   return (
