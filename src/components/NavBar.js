@@ -5,7 +5,7 @@ import Link from "next/link";
 function NavBar({ links_list, className }) {
   const links_elements = links_list.map((link, index) => (
     <li key={index}>
-      <Link href={link.href}>{link.label}</Link>
+      <a href={link.href}>{link.label}</a>
     </li>
   ));
   return (
@@ -33,14 +33,53 @@ function NavBar({ links_list, className }) {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 p-2 shadow"
           >
             {links_elements}
+
+            <li>
+              <a href="https://jordanwakelam.alwaysdata.net/flask/page1/">
+                page1
+              </a>
+            </li>
+            <li>
+              <a href="https://jordanwakelam.alwaysdata.net/flask/page2/">
+                page2
+              </a>
+            </li>
+            <li>
+              <a href="https://jordanwakelam.alwaysdata.net/flask/page3/">
+                page3
+              </a>
+            </li>
+            <li>
+              <a href="https://jordanwakelam.alwaysdata.net/flask/cv3/">cv3</a>
+            </li>
           </ul>
         </div>
-        <Link href="/" className="btn btn-ghost text-xl">
+        <a href="/" className="btn btn-ghost text-xl">
           JWKL
-        </Link>
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{links_elements}</ul>
+        <ul className="menu menu-horizontal px-1">
+          {links_elements}
+          <li>
+            <a href="https://jordanwakelam.alwaysdata.net/flask/page1/">
+              page1
+            </a>
+          </li>
+          <li>
+            <a href="https://jordanwakelam.alwaysdata.net/flask/page2/">
+              page2
+            </a>
+          </li>
+          <li>
+            <a href="https://jordanwakelam.alwaysdata.net/flask/page3/">
+              page3
+            </a>
+          </li>
+          <li>
+            <a href="https://jordanwakelam.alwaysdata.net/flask/cv3/">cv3</a>
+          </li>
+        </ul>
       </div>
       <div className="navbar-end">{/* <a className="btn">Button</a> */}</div>
     </div>
